@@ -1,0 +1,71 @@
+// BREAK POINTS
+@mixin respond($breakpoint) {
+    @if ($breakpoint == "sm") {
+      @media (max-width: 640px) {
+        @content;
+      }
+    }
+    @if ($breakpoint == "md") {
+      @media (max-width: 768px) {
+        @content;
+      }
+    }
+    @if ($breakpoint == "lg") {
+      @media (max-width: 1024px) {
+        @content;
+      }
+    }
+    @if ($breakpoint == "xl") {
+      @media (max-width: 1280px) {
+        @content;
+      }
+    }
+    @if ($breakpoint == "2xl") {
+      @media (max-width: 1536px) {
+        @content;
+      }
+    }
+  }
+
+
+.footer{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(228, 228, 228);
+    margin-top: 100px;
+
+    .top_bottom{
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+      
+        
+        .two_icons{
+            width: 32px;
+            height:  32px;
+            margin-left: 30px;
+            cursor: pointer;
+     
+        }
+    }
+
+    .bottom_bottom{
+        height: 20%;
+        display: flex;
+        justify-content: center;
+
+        @include respond("lg"){
+            font-size: 15px;
+          }
+          @include respond("md"){
+            font-size: 16px;
+          }
+          @include respond("sm"){
+            font-size: 14px;
+          }
+      
+    }
+}

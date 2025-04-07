@@ -1,0 +1,206 @@
+@import "../../variables.scss";
+// BREAK POINTS
+@mixin respond($breakpoint) {
+    @if ($breakpoint == "sm") {
+      @media (max-width: 640px) {
+        @content;
+      }
+    }
+    @if ($breakpoint == "md") {
+      @media (max-width: 768px) {
+        @content;
+      }
+    }
+    @if ($breakpoint == "lg") {
+      @media (max-width: 1024px) {
+        @content;
+      }
+    }
+    @if ($breakpoint == "xl") {
+      @media (max-width: 1280px) {
+        @content;
+      }
+    }
+    @if ($breakpoint == "2xl") {
+      @media (max-width: 1536px) {
+        @content;
+      }
+    }
+  }
+  // background-color:$baseColor;
+  .top-navigation-container{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-right: 200px;
+    z-index: 800;
+    background-color:transparent;
+    transition: background-color 0.3s ease;
+    @include respond("xl"){
+        padding-right: 80px;
+    }
+    @include respond("md"){
+        padding-right: 30px;
+    }
+    @include respond("sm"){
+      padding-bottom: 20px;
+  }
+    .mobile_nav_container{
+        z-index: 999;
+        position: absolute;
+        width: 0;
+        transition: width 0.4s ease-in;
+        height: 700px;
+        top: 0;
+        background-color: $baseColor;
+        overflow: hidden;
+
+
+
+    }
+
+   .mobile_nav_container_active{
+    z-index: 999;
+    display: none;
+    position: absolute;
+    width: 400px;
+    transition: width 0.4s ease-out;
+    height: 700px;
+    top: 0;
+    background-color: $baseColor;
+    padding-top: 50px;
+    padding-left: 40px;
+    @include respond("lg"){
+        display: block;
+     }
+    @include respond("sm"){
+ 
+        width: 100%;
+     
+     }
+
+     .mnc_link_container{
+        all: unset;
+        cursor: pointer;
+  
+
+        .mlc_item{
+        margin-bottom: 40px;
+        font-size: 18px;
+                
+        @include respond("md"){
+          font-size: 16px;
+      }
+        @include respond("sm"){
+          font-size: 14px;
+      }
+        }
+        .mlc-activee{
+            color: #F49703;
+        }
+     }
+    }
+ 
+    // background-color: red;
+    // background: transparent;
+
+    .tnc-logo-container{
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+        @include respond("xl"){
+            padding-left: 10px;
+        }
+        .tlc-logo{
+            width: 180px;
+            height: auto;
+            @include respond("xl"){
+                width: 140px;
+            }
+            @include respond("sm"){
+                display: none;
+            }
+        }
+        .tlc-text{
+            font-size: 24px;
+            font-weight: 600;
+            margin-left: 20px;
+            letter-spacing: 0.5px;
+            color: #fff;
+            @include respond("xl"){
+                font-size: 18px;
+            }
+        }
+    }
+    .menu-icon{
+        display: none;
+        color: #fff;
+        font-size: 30px;
+        cursor: pointer;
+        @include respond("lg"){
+           display: block;
+        }
+    }
+    .tnc-nav-links-container{
+        // background-color: #fff;
+        @include respond("lg"){
+            display: none;
+        }
+        .tnlc-navlist {
+            .tn-link{
+                padding-top:20px;
+                padding-bottom:20px;
+                text-decoration:unset;
+                .nav-li{
+                    display: inline-block;
+                    margin-left: 30px;
+                    color: white;
+                    letter-spacing: 0.5px;
+                    font-size: 18px;
+                    // padding-bottom: 20px;
+                    @include respond("xl"){
+                        font-size: 16.8px;
+                    }
+                            }
+                            .custom-top-nav-border{
+                                display: inline-block;
+                                width: 0;
+                                height: 2px;
+                                transition: width 0.2s ease-in;
+                                background-color: #fff;
+                            }
+                            .custom-top-nav-border-hover{
+                                display: inline-block;
+                                height: 2px;
+                                background-color: #fff;
+                                width: 100px;
+                                transition: width 0.2s ease-out;
+               }             
+                            .nav-activee{
+                                color: #F49703;
+                            }
+                            .navi-activee{
+                                background-color: #F49703;
+                            }
+            }
+          
+        }
+  
+    }
+  }
+  .top_nav_color{
+    background-color:transparent;
+  }
+ .scrolled {
+    position: fixed;
+    background-color:$baseColor;
+    /* Add other styles for the scrolled state */
+  }
+//  .scrolled_not {
+
+//     background-color:transparent;
+//     /* Add other styles for the scrolled state */
+//   }
