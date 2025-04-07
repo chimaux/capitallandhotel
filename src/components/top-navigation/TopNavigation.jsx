@@ -77,20 +77,37 @@ export const TopNavigation = () => {
             </Link>
         
             <Link className="mnc_link_container"       
-                to="how-to-buy" 
+                to="services" 
             smooth={true} 
             duration={500} 
             offset={-200}
             style={{ cursor: 'pointer',color:"#fff" }}
             onClick={()=>{
               set_open_close_nav(false)
-              set_page("how-to-buy")
+              set_page("services")
             }}
             >
               <div
                 className={`mlc_item `}
               >
-               How to buy
+               Services
+              </div>
+            </Link>
+            <Link className="mnc_link_container"       
+                to="our-meals" 
+            smooth={true} 
+            duration={500} 
+            offset={-200}
+            style={{ cursor: 'pointer',color:"#fff" }}
+            onClick={()=>{
+              set_open_close_nav(false)
+              set_page("our-meals")
+            }}
+            >
+              <div
+                className={`mlc_item `}
+              >
+                Our delicacies
               </div>
             </Link>
           </>
@@ -200,7 +217,7 @@ export const TopNavigation = () => {
           </Link>
           <Link
             className="tn-link"
-            onMouseEnter={() => set_nav_hover("faq")}
+            onMouseEnter={() => set_nav_hover("our-meals")}
             onMouseLeave={() => set_nav_hover("")}
             to="our-meals" 
             smooth={true} 
@@ -213,7 +230,7 @@ export const TopNavigation = () => {
             </li>
             <div
               className={` ${
-                nav_hover === "faq"
+                nav_hover === "our-meals"
                   ? "custom-top-nav-border-hover"
                   : "custom-top-nav-border"
               }`}
