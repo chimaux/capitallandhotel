@@ -10,15 +10,31 @@ import aboutImage from "./building.jpg";
 import room from "./room.jpg";
 import room2 from "./room2.jpg";
 import food from "./heroImage2.jpg"
-import { MdUnfoldMore } from "react-icons/md";
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import markerIcon from 'leaflet/dist/images/marker-icon.png';
+import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
+import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 
 
 import TelegramJoinButton from "../../components/telegramJoinButton/TelegramJoinButton";
+
+// Fix default marker icon issue in React
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: markerIcon2x,
+  iconUrl: markerIcon,
+  shadowUrl: markerShadow,
+});
+
 
 
 
 
 export const Home = () => {
+  const hotelLocation = [6.6703923, 3.2916837];
+
 
 
 
@@ -319,6 +335,40 @@ style={{
 </div>
       </div>
     
+
+
+
+
+    <div className="about_program-container3">
+    <p className="apc_title"
+id="our-meals"
+style={{
+  marginBottom:"20px",
+  marginTop:"100px"
+}}
+>🍛 We are right here </p>
+
+
+<p className="apc_text">
+  34 Oliyide street,Ojokoro Ijaiye, Lagos. Nigeria.
+</p>
+      <MapContainer
+      center={hotelLocation}
+      zoom={15}
+      style={{ height: '400px', width: '100%' }}
+    >
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      />
+      <Marker position={hotelLocation}>
+        <Popup>JJCapital Land Hotel & suites</Popup>
+      </Marker>
+    </MapContainer>
+    </div>
+   
+
+
 </div>
     </div>
   );

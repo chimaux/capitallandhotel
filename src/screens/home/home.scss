@@ -876,5 +876,39 @@ left: 40%;
       }
     }
   }
+  .about_program-container3{
+
+  
+      .apc_title{
+        font-size: 30px;
+        color: #004657fb;
+        font-weight: 900;
+
+        @include respond("sm"){
+          font-size: 24px;
+
+        }
+      }
+
+      .apc_text{
+        font-size: 18px;
+        text-align: justify;
+        color: #424242;
+        margin-bottom:20px;
+        @include respond("lg"){
+          font-size: 15px;
+        }
+        @include respond("md"){
+          font-size: 16px;
+        }
+        @include respond("sm"){
+          font-size: 14px;
+        }
+      }
+   
+    }
+
+
+  }
 }
-}
+
