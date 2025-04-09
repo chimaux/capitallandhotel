@@ -179,7 +179,7 @@ console.log(showBooleanValue,"working")
 
 <div className="apc1">
 <p className="apc_title"  id="about">JJCapital Land Hotel</p>
-<p className="apc_title2">Welcome to JJCapital Land Hotel – Lagos’ Hidden Gem of Serenity & Style!</p>
+<p className="apc_title2">Welcome to JJCapital Land Hotel – Ijaiye Ojokoro, Lagos. Hidden Gem of Serenity & Style!</p>
 <p className="apc_text">
   
 
@@ -342,10 +342,7 @@ style={{
     <div className="about_program-container3">
     <p className="apc_title"
 id="our-meals"
-style={{
-  marginBottom:"20px",
-  marginTop:"100px"
-}}
+
 >🍛 We are right here </p>
 
 
